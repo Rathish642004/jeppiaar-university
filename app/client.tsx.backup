@@ -1,0 +1,43 @@
+"use client"
+
+import type React from "react"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import Header from "@/components/header/index"
+import Footer from "@/components/footer/index"
+import LogoOverlay from "@/components/header/logo"
+
+const inter = Inter({ subsets: ["latin"] })
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-white focus:text-primary"
+        >
+          Skip to main content
+        </a>
+        <LogoOverlay />
+        <Header />
+        <main id="main-content" className="pt-0 bg-gray-50 min-h-screen">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8 relative">
+            {/* Decorative elements similar to Joy University */}
+            <div className="absolute top-0 left-0 w-24 h-24 bg-primary/10 rounded-full -translate-x-1/2 -translate-y-1/2 z-0"></div>
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-secondary/10 rounded-full translate-x-1/2 translate-y-1/2 z-0"></div>
+
+            {/* Content container with subtle shadow and rounded corners */}
+            <div className="relative z-10 bg-white rounded-lg shadow-sm">{children}</div>
+          </div>
+        </main>
+        <Footer />
+      </body>
+    </html>
+  )
+}
+

@@ -1,0 +1,568 @@
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+export default function CoursesOfferedPage() {
+  return (
+    <div className="bg-gradient-to-b from-blue-50 to-white">
+      {/* Hero Section with Background Image */}
+      <div
+        className="relative bg-cover bg-center py-20 mb-12"
+        style={{
+          backgroundImage: "url('/placeholder.svg?height=800&width=1600')",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <div className="absolute inset-0 bg-primary/80"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Academic Programs</h1>
+            <p className="text-xl text-white/90 mb-8">
+              Explore our comprehensive range of academic programs designed to prepare you for success in your chosen
+              field.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="/admissions/apply">Apply Now</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-white/10 text-white border-white/20 hover:bg-white/20"
+                asChild
+              >
+                <Link href="/admissions/eligibility">Check Eligibility</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 pb-20">
+        {/* Decorative Elements */}
+        <div className="absolute left-0 top-1/4 w-64 h-64 rounded-full bg-blue-200/30 -z-10 blur-3xl"></div>
+        <div className="absolute right-0 bottom-1/4 w-80 h-80 rounded-full bg-purple-200/20 -z-10 blur-3xl"></div>
+
+        {/* Programs Navigation */}
+        <Tabs defaultValue="undergraduate" className="mb-16">
+          <div className="bg-white rounded-lg shadow-md p-2 mb-12">
+            <TabsList className="mx-auto flex justify-center w-full gap-1">
+              <TabsTrigger value="undergraduate" className="flex-1 py-3">
+                Undergraduate
+              </TabsTrigger>
+              <TabsTrigger value="postgraduate" className="flex-1 py-3">
+                Postgraduate
+              </TabsTrigger>
+              <TabsTrigger value="doctoral" className="flex-1 py-3">
+                Doctoral
+              </TabsTrigger>
+              <TabsTrigger value="diploma" className="flex-1 py-3">
+                Diploma & Certificate
+              </TabsTrigger>
+            </TabsList>
+          </div>
+
+          <TabsContent value="undergraduate">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-blue-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Engineering & Technology</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      B.Tech Computer Science & Engineering
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      B.Tech Information Technology
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      B.Tech Electronics & Communication
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      B.Tech Electrical & Electronics
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      B.Tech Mechanical Engineering
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      B.Tech Civil Engineering
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/engineering-technology"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-purple-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Arts, Humanities & Management</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      Bachelor of Business Administration (BBA)
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      B.Com in Accounting & Finance
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      BA in English Literature
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      BA in Economics
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/arts-humanities-management"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-green-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Science & Health</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      B.Sc Computer Science
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      B.Sc Mathematics
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      B.Sc Physics
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      B.Sc Chemistry
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      B.Sc Biotechnology
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/science-health"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-orange-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Physical Education & Sports</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-orange-600 mr-2">•</span>
+                      Bachelor of Physical Education (B.P.Ed)
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-orange-600 mr-2">•</span>
+                      B.Sc in Sports Science
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-orange-600 mr-2">•</span>
+                      B.Sc in Sports Management
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/physical-education"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-red-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Aeronautics</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-red-600 mr-2">•</span>
+                      B.Tech in Aerospace Engineering
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-600 mr-2">•</span>
+                      B.Sc in Aviation Technology
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-600 mr-2">•</span>
+                      B.Sc in Aircraft Maintenance Engineering
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/aeronautics"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="postgraduate">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-blue-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Engineering & Technology</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      M.Tech Computer Science & Engineering
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      M.Tech AI & Machine Learning
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      M.Tech Structural Engineering
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      M.Tech Power Electronics
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      M.Tech Data Science
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/engineering-technology"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-purple-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Arts, Humanities & Management</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      Master of Business Administration (MBA)
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      MA in English
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      MA in Economics
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/arts-humanities-management"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-green-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Science & Health</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      M.Sc in Data Science
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      M.Sc in Physics
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      M.Sc in Chemistry
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/science-health"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-orange-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Physical Education & Sports</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-orange-600 mr-2">•</span>
+                      Master of Physical Education (M.P.Ed)
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-orange-600 mr-2">•</span>
+                      M.Sc in Sports Nutrition
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-orange-600 mr-2">•</span>
+                      M.Sc in Sports Psychology
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/physical-education"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-red-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Aeronautics</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-red-600 mr-2">•</span>
+                      M.Tech in Aerospace Engineering
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-red-600 mr-2">•</span>
+                      M.Sc in Avionics
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/aeronautics"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="doctoral">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-blue-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Engineering & Sciences</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      Ph.D. in Computer Science & Engineering
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      Ph.D. in Electronics & Communication
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      Ph.D. in Mechanical Engineering
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      Ph.D. in Physics
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      Ph.D. in Chemistry
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      Ph.D. in Mathematics
+                    </li>
+                  </ul>
+                  <Link
+                    href="/research/phd-admissions"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-purple-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Management & Humanities</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      Ph.D. in Management
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      Ph.D. in Commerce
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      Ph.D. in Economics
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      Ph.D. in English
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      Ph.D. in Psychology
+                    </li>
+                  </ul>
+                  <Link
+                    href="/research/phd-admissions"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="diploma">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-blue-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Technical Diplomas</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      Diploma in Computer Engineering
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      Diploma in Electronics Engineering
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      Diploma in Aircraft Maintenance Engineering
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/engineering-technology"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-green-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Sports & Health Diplomas</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      Diploma in Sports Coaching
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      Diploma in Sports Injury Management
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      Diploma in Medical Laboratory Technology
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      Diploma in Food Science and Quality Control
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/physical-education"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="h-3 bg-purple-600"></div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-primary">Management & Arts Diplomas</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      Diploma in Business Administration
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      Diploma in Creative Writing
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-600 mr-2">•</span>
+                      Diploma in Aviation Management
+                    </li>
+                  </ul>
+                  <Link
+                    href="/academics/arts-humanities-management"
+                    className="text-primary font-medium flex items-center gap-1 mt-4 hover:underline"
+                  >
+                    Learn more
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+        </Tabs>
+
+        {/* Call to Action */}
+        <div className="bg-gradient-to-r from-primary/90 to-primary text-white rounded-xl p-8 mt-16 shadow-lg">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to Apply?</h2>
+            <p className="text-white/90 mb-8 text-lg">
+              Take the first step towards a transformative educational experience at Jeppiaar University. Our admissions
+              team is ready to guide you through the process.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="/admissions/apply">Apply Now</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-white/10 text-white border-white/20 hover:bg-white/20"
+                asChild
+              >
+                <Link href="/contact">Contact Admissions</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
